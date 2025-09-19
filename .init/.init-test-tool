@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/alumni-management-portal-54291-54315/alumni_management_system_frontend"
+}
