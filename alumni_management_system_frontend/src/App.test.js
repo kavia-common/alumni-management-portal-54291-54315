@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders login page by default when not authenticated', () => {
+  localStorage.removeItem('ams_user');
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const signInText = screen.getByText(/welcome back/i);
+  expect(signInText).toBeInTheDocument();
 });

@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ocean-primary: #F472B6;
+  --ocean-secondary: #F59E0B;
+  --ocean-success: #10B981;
+  --ocean-error: #EF4444;
+  --ocean-text: #374151;
+  --ocean-background: #FDF2F8;
+  --ocean-surface: #FFFFFF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-[var(--ocean-background)] text-[var(--ocean-text)] font-sans antialiased;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-rose-50 to-purple-50;
+}
+
+.card {
+  @apply bg-white/80 backdrop-blur border border-white/60 shadow-sm rounded-2xl;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply text-white bg-primary hover:bg-rose-400;
+}
+
+.btn-secondary {
+  @apply text-white bg-secondary hover:bg-amber-500;
+}
+
+.input {
+  @apply w-full px-4 py-2 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
 }

@@ -1,82 +1,63 @@
-# Lightweight React Template for KAVIA
+# Alumni Management System Frontend (React + Tailwind)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+Elegant Ocean Professional themed frontend with role-based dashboards, authentication, data collection, approvals, requests, and jobs using mock APIs.
+
+## Quick Start
+
+1. Install dependencies
+   - npm install
+
+2. Start development server
+   - npm start
+   - App runs at http://localhost:3000
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Authentication and Registration (mock)
+- Role-based dashboards:
+  - Student, Alumni, Coordinator, Placement Incharge, Office Incharge
+- Alumni data collection forms
+- Profile management
+- Approvals workflow
+- Requests management
+- Job listings and posting (by Placement/Coordinator/Office)
+- Responsive layout with top navbar and role-aware side menu
+- Soft pastel gradient UI per Ocean Professional style guide
 
-## Getting Started
+## Testing Roles
 
-In the project directory, you can run:
+Use the login email suffix to simulate roles:
+- student@example.com -> Student (default)
+- user+alumni@example.com -> Alumni
+- user+coord@example.com -> Coordinator
+- user+place@example.com -> PlacementIncharge
+- user+office@example.com -> OfficeIncharge
 
-### `npm start`
+Any password is accepted in mock mode.
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Structure
 
-### `npm test`
+- src/context/AuthContext.js - Auth state using mock API
+- src/services/mockApi.js - All mock endpoints and data
+- src/layout/MainLayout.js - Navbar + side navigation + content outlet
+- src/pages/auth/* - Login/Register
+- src/pages/dashboards/* - Role dashboards
+- src/pages/common/* - Shared feature pages
 
-Launches the test runner in interactive watch mode.
+## Styling
 
-### `npm run build`
+Tailwind configured with:
+- Primary: #F472B6
+- Secondary: #F59E0B
+- Success: #10B981
+- Error: #EF4444
+- Gradient: from-rose-50 to-purple-50
+- Background: #FDF2F8
+- Surface: #FFFFFF
+- Text: #374151
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Utilities and components in src/index.css.
 
-## Customization
+## Notes
 
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This frontend uses mock APIs only. Replace src/services/mockApi.js with real API integration when backend is ready.
